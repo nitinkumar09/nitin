@@ -13,12 +13,12 @@ const mongoose = require('mongoose');
 const { env } = require("process");
 const dbName = 'staticdb';            // yahi database use karna hoga mongosh shell par 
 const mongoURI = `mongodb+srv://kumarnitin83086:@nitin8865@yoga-teacher.a011i5o.mongodb.net/${dbName}`;
-main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongoURI)
 
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
+main().catch(err => console.log(err));
 
 // Uncomment the line below to establish the connection
 main();
