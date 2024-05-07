@@ -12,7 +12,7 @@ const bodyparser = require("body-parser"); // body parser ek module ha jo post r
 const mongoose = require('mongoose');
 const { env } = require("process");
 const dbName = 'staticdb';            // yahi database use karna hoga mongosh shell par 
-const mongoURI = `mongodb:+srv://kumarnitin83086:@nitin8865@yoga-teacher-a011i5o.mongodb.net/${dbName}`;
+const mongoURI = `mongodb+srv://kumarnitin83086:@nitin8865@yoga-teacher.a011i5o.mongodb.net/${dbName}`;
 main().catch(err => console.log(err));
 async function main() {
   await mongoose.connect(mongoURI)
