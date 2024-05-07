@@ -45,7 +45,7 @@ databasestore.methods.generateAuthToken = async function () // jab async ka use 
         return tokn;
     }
     catch (error) {
-        res.send("the error part nitin " + error); // ye chrome par output dega 
+        console.log("the error part nitin " + error); // ye chrome par output dega 
         // console.log("the error part" + error);     // ye terminal par out dega upper wala res.send chrom par jha request dal te ha 
     }
 }
