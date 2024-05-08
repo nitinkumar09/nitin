@@ -37,6 +37,40 @@ let nCount = selector => {
     });
 };
 
+
+// js dollar to ruppes and rupees to dollar convert continuoschange js start
+
+
+function convertCurrency() {
+    var elements = [document.getElementById("pricing1"), document.getElementById("pricing2"), document.getElementById("pricing3")];
+    var isDollarToRupees = true;
+
+    // Set interval to run every 1 second
+    setInterval(function () {
+        for (var i = 0; i < elements.length; i++) {
+            var priceElement = elements[i].querySelector("h1");
+            var price = parseFloat(priceElement.textContent);
+            if (isDollarToRupees && priceElement.textContent.includes("$")) {
+                // Convert dollar to rupees
+                price = Math.floor(price * 83.51); // Round down to remove decimals
+                priceElement.textContent = price + "₹";
+            } else if (!isDollarToRupees && priceElement.textContent.includes("₹")) {
+                // Convert rupees to dollar
+                price = price / 83.51;
+                priceElement.textContent = price.toFixed(2) + "$";
+            }
+        }
+        // Toggle conversion direction
+        isDollarToRupees = !isDollarToRupees;
+    }, 1000); // 1000 milliseconds = 1 second
+}
+
+// Call the function when the page loads
+convertCurrency();
+
+
+// js dollar to ruppes and rupees to dollar convert continuoschange js end
+
 let a = 0;
 $(window).scroll(function () {
     // The .offset() method allows us to retrieve the current position of an element  relative to the document
