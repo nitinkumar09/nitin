@@ -75,6 +75,6 @@ databasestore.pre("save", async function (next) { //arrofatefunction nhi lga skt
 
 
 // now we need to create  a collection
-const Register = mongoose.model('staticCollection', databasestore);
+const Register = mongoose.model('HostCollection', databasestore);
 
 module.exports = Register;
