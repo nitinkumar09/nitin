@@ -1,0 +1,61 @@
+@media only screen and (max-width:768px) {
+    header .navbar-brand {
+        padding-left: 1rem !important;
+    }
+
+    section .panel {
+        position: initial !important;
+        width: initial !important;
+        height: initial !important;
+    }
+
+    section .cover {
+        background-position: -244px -119px !important;
+    }
+
+    section .rect {
+        width: 10rem !important;
+        height: 8rem !important;
+    }
+
+    section .rect h1 {
+        font-size: 2rem !important;
+    }
+
+    .section-3 {
+        height: inherit;
+        padding: 10vmin !important;
+    }
+
+    .section-3 h1 {
+        padding: 6vmin 4vmin !important;
+    }
+
+    .section-3 .col-md-6 {
+        text-align: center !important;
+    }
+
+    section .desktop {
+        font-size: 2vmin !important;
+    }
+
+    section .team {
+        display: flex !important;
+        flex-direction: column !important;
+        align-content: center !important;
+    }
+
+    section .carousel-inner {
+        position: initial;
+    }
+}
+
+@media only screen and (max-width:425px) {
+    .foot {
+        margin-top: 8vmin !important;
+    }
+
+    section .card {
+        width: 16rem !important;
+    }
+}
