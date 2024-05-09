@@ -89,6 +89,10 @@ app.get("/book", (req, res) => { // call back function
     res.render("book")
 
 });
+app.get("/feedback", (req, res) => { // call back function
+    res.render("feedback")
+
+});
 
 app.get("/signup", (req, res) => { // call back function
     res.render("signup")
