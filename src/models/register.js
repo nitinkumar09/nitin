@@ -64,7 +64,7 @@ databasestore.pre("save", async function (next) { //arrofatefunction nhi lga skt
     if (this.isModified("password")) { // isModified ka matlb ha ki jab koi modified bhi kre password tab bhi ye chle 
         // console.log(`the curren pass ${this.password}`);
         this.password = await bcrypt.hash(this.password, 10); // this.password jo input me aaya ha use hi hase me convert karke usi me dal rhe h
-        this.confirmpassword = await bcrypt.hash(this.password, 10); //phele undefine set kiya tha // undefined;// isse database me confirmpassword wala field aayega hi nhi    // humare form me confirmpassword he na usme hum undefind dal rhe ha ek me hi dalrhe ha convert karke password me
+       // this.confirmpassword = await bcrypt.hash(this.password, 10); //phele undefine set kiya tha // undefined;// isse database me confirmpassword wala field aayega hi nhi    // humare form me confirmpassword he na usme hum undefind dal rhe ha ek me hi dalrhe ha convert karke password me
         // console.log(`the convert pass ${this.password}`);
         next(); // next means aage jao nhi to ye yahi yahi ghumta rhega // iska means ha ki ab kam hone ke bad jo function upper diya(save function app.js me ha wo isko run kro) ha ho run kro
     }
