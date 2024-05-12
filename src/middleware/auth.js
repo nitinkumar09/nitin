@@ -13,7 +13,9 @@ const auth = async (req, res, next) => {
 
         next();          // next function ab mere kam ho gya ha next pe jao nhi lgaya to next issi function me fsa rhega wo loding hi dikha ta rhega jab secret page par jayege to 
     } catch (error) {
-        res.status(401).send(error);
+      //  res.status(401).send(error);
+         res.render("signup");
+
     }
 }
 
