@@ -31,6 +31,7 @@
 
 <body>
 
+    {{!-- {{>navbar}} --}}
 
     <div class="hero">
         <div class="container-fluid">
@@ -40,19 +41,21 @@
                     <h1>Hello, <span class="name"></span></h1>
                 </center>
                 <h1 class="thnx">You can give <span class="feedback">Feedback</span> here</h1>
-                <textarea placeholder="write anything here relevant to feedback..." class="mb-2"
-                    id="myTextarea"></textarea>
+                <form action="/feedback" class="form" method="POST"><textarea
+                        placeholder="write anything here relevant to feedback..." class="mb-3 feed" id="myTextarea"
+                        name="feed" type="feed"></textarea>
             </div>
         </div>
         <div class="container">
-            <div class="row text-center m-auto">
+            <div class="row text-center m-auto ">
 
-                <button class=""><img src="images/play.png" alt=""><a href=""></a> Listen me</button>
-                <button class="btn btn-success mx-auto home">
+                <button class="" type="submit"><img src="images/play.png" alt="">Listen me</button>
+                <button class="btn btn-success mx-auto home" type="submit">
                     <a href="/">Go to Home page</a>
                 </button>
             </div>
         </div>
+        </form>
     </div>
     <!-- js start -->
     <script src="/js/feedback.js"></script>
