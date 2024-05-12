@@ -1,6 +1,7 @@
 require('dotenv').config(); //dotenv  ye security purpose ke liye ye secret ke or other chijo ko secure rakhega jada janne ke liye search kre dote node                                         //ye apne aap generate tha isliye rakha kabhi kuch galti na ho//const { log } = require("console");
 const express = require("express"); // ye iske upper ka apne aap ban gya console wala htaya isliye nhi kabhi kuch galat ho jaye
 const path = require("path");
+const mongoose = require("mongoose")
 const hbs = require("hbs");
 const bcrypt = require("bcryptjs"); // use password convert in hase code
 const jwt = require("jsonwebtoken");
@@ -125,10 +126,11 @@ app.post("/signup", async (req, res) => { // call back function
                 email: req.body.email,
                 password: password,
                 confirmpassword: confirmpassword,
-                message: req.body.message
+                currentTime: new Date()
             })
 
 
+            // yha se ye niche ki three line auth.js me likha ha inka code ye authentication kar rahi ha ki jab user na login or signup kiya tab jo token generate huhoga use matvh kar ke tab access dega agr nhi match krega to error dega jo hume .auth.js me de rakhi hogi
             console.log("nitin document " + employeeSchema);
             const token = await employeeSchema.generateAuthToken();
             console.log(" nitin rgister The token part " + token);
@@ -166,6 +168,56 @@ app.post("/signup", async (req, res) => { // call back function
 
 });
 
+
+
+
+// yha se feedback save process start
+
+
+
+// Define Schema for Feedback
+const feedbackSchema = new mongoose.Schema({
+
+    feed: {
+        type: String
+    }
+    // other fields...
+});
+
+// Define Model for Feedback
+const FeedbackK = mongoose.model('FeedbackK', feedbackSchema);
+// Route Handler for POST request to /feedback
+app.post("/feedback", async (req, res) => {
+    try {
+
+        // yha hum feedback get kar rhe ha or save kra rhe ha
+
+
+        // Extract feed from request body
+        // const feed = req.body.feed;
+
+        // Create a new instance of Feedback model
+        const newFeedback = new FeedbackK({ feed: req.body.feed });
+
+        // Save the feedback to the database
+        newFeedback.save();
+
+        console.log("Feedback saved:", newFeedback); // for check ise hatane se bhi error saving error aayega 
+
+        // Send success response
+        // res.render("feedback")
+        // res.status(200).send('Feedback saved successfully');
+        res.status(201).render("index");
+
+    } catch (error) {
+        console.error('Error saving feedback:', error);
+        // Send error response
+        res.status(500).send('Error saving feedback');
+    }
+});
+
+
+// yha se feedback save process end
 
 
 
