@@ -32,12 +32,15 @@ if (username !== null && username.trim() !== "") {
 
 document.querySelector("button").addEventListener("click", () => {
     // Get the textarea element
-    var textarea = document.getElementById("myTextarea");
+    // var textarea = document.getElementById("myTextarea");
 
     // Set the value of the textarea to an empty string
-    textarea.value = "";
+    // textarea.value = ""; //isse me click karne par textarea me empty dal rha tha but mujhe data save karna ha agar is open karung to empty data save hoga db me
 
-    speech.text = `Thank you for feedback ${username} Brother`;
+    speech.text = `Thank you for feedback ${username} Brother I got your feedback.`;
     window.speechSynthesis.speak(speech);
-    alert(`Thank you for feedback ${username} Brother .........`)
+    // alert(`Thank you for feedback ${username} Brother .........`)  // isse error aayega sidh catch block me jayega error saving error aayega ise on karne se
 })
+
+
+
