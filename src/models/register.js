@@ -21,6 +21,10 @@ const databasestore = new mongoose.Schema({
         type: String,
         required: true
     },
+     currentTime: {
+        type: Date,
+        default: Date.now // Set default value to current date/time
+    },
     tokens: [{
         token: {
             type: String,
