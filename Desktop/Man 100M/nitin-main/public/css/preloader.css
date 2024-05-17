@@ -1,0 +1,87 @@
+   /* Preloader Styles */
+   .containerss {
+       position: fixed;
+       /* Position the preloader relative to the viewport */
+       top: 50%;
+       /* Move the preloader 50% down from the top */
+       left: 50%;
+       /* Move the preloader 50% from the left */
+       transform: translate(-50%, -50%);
+       /* Center the preloader exactly */
+       width: 200px;
+       height: 200px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .containerss .loaderss {
+       position: absolute;
+       width: 100%;
+       /* Adjusted to 100% to center within the container */
+       height: 100%;
+       /* Adjusted to 100% to center within the container */
+       border-radius: 50%;
+       animation: animate 2s linear infinite;
+   }
+
+   .containerss .loaderss:nth-child(2),
+   .containerss .loaderss:nth-child(4) {
+       animation-delay: -1s;
+   }
+
+   @keyframes animate {
+       0% {
+           transform: rotate(0deg);
+           filter: hue-rotate(360deg);
+       }
+
+       100% {
+           transform: rotate(360deg);
+           filter: hue-rotate(0deg);
+       }
+   }
+
+   .containerss .loaderss:nth-child(1)::before,
+   .containerss .loaderss:nth-child(2)::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 50%;
+       height: 100%;
+       background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));
+       background-size: 100px 180px;
+       background-repeat: no-repeat;
+       border-top-left-radius: 100px;
+       border-bottom-left-radius: 100px;
+   }
+
+   .containerss .loaderss i {
+       position: absolute;
+       top: 0;
+       left: 50%;
+       transform: translateX(-50%);
+       width: 20px;
+       height: 20px;
+       background: #00fff9;
+       border-radius: 50%;
+       z-index: 100;
+       box-shadow: 0 0 10px #00fff9,
+           0 0 30px #00fff9,
+           0 0 40px #00fff9,
+           0 0 50px #00fff9,
+           0 0 60px #00fff9,
+           0 0 70px #00fff9,
+           0 0 80px #00fff9,
+           0 0 90px #00fff9,
+           0 0 100px #00fff9;
+   }
+
+   .containerss .loaderss span {
+       position: absolute;
+       inset: 20px;
+       background: #e8e8e8;
+       border-radius: 50%;
+       z-index: 1;
+   }

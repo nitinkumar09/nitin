@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background: linear-gradient(rgb(117, 34, 159), rgb(222, 222, 53), rgb(137, 137, 206), rgb(78, 26, 133));
+            color: white;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            height: 56vh;
+            padding-top: 290px;
+        }
+
+        h1 {
+
+            color: rgb(148, 23, 23) !important;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .head {
+            margin-top: 180px !important;
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- {{>navbar} ise use karke navbar lag jata ha jo partals folder me navbar.hbs file ha use propertied se ho rahi
+    ha --}}
+    {{>navbar}}
+    <div class="container">
+        <h1 class="head">Incorrect password please try again </h1>
+    </div>
+</body>
+
+</html>

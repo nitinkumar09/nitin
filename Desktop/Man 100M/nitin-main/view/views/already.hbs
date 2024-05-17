@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background: linear-gradient(rgb(117, 34, 159), rgb(222, 222, 53), rgb(137, 137, 206), rgb(78, 26, 133));
+            color: white;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            height: 96vh;
+        }
+
+        h1 {
+            padding: 20% 0 0 0;
+            color: rgb(12, 0, 93) !important;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- {{>navbar} ise use karke navbar lag jata ha jo partals folder me navbar.hbs file ha use propertied se ho rahi
+    ha --}}
+    {{>navbar}}
+    <div class="container">
+        <h2>This email already Exits</h2>
+        <h1>please try again other email</h1>
+    </div>
+</body>
+
+</html>
